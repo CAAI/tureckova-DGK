@@ -30,7 +30,7 @@ try:
     # automatically (they are subfolders of base).
     # Here I use environment variables to set the base folder. Environment variables allow me to use the same code on
     # different systems (and our compute cluster)
-    base = '/home/tureckova/Pictures/nnUNet/nnUNet_base/'
+    base = '/homes/kovacs/project_data/hnc-auto-contouring/tureckova'
     raw_dataset_dir = join(base, "nnUNet_raw")
     splitted_4d_output_dir = join(base, "nnUNet_raw_splitted")
     cropped_output_dir = join(base, "nnUNet_raw_cropped")
@@ -43,10 +43,16 @@ except KeyError:
 # preprocessing_output_dir is where the preprocessed data is stored. If you run a training I very strongly recommend
 # this is a SSD!
 try:
-    preprocessing_output_dir = '/home/tureckova/Pictures/nnUNet/nnUNet_preprocessed/'
+    preprocessing_output_dir = '/media/bizon/data2tb/homes/kovacs/project_data/hnc-auto-contouring/tureckova/nnUNet_preprocessed'
 except KeyError:
     preprocessing_output_dir = None
 
 # This is where the trained model parameters are stored
-network_training_output_dir = os.path.join('/home/tureckova/Pictures/nnUNet/nnUNet_output/', my_output_identifier)
+network_training_output_dir = os.path.join('/homes/kovacs/project_data/hnc-auto-contouring/tureckova/nnUNet_trained_models', my_output_identifier)
 maybe_mkdir_p(network_training_output_dir)
+
+
+'''
+Copying data to local ssd
+rsync -auvR -rsh=ssh sonne.petnet.rh.dk:/homes/kovacs/project_data/hnc-auto-contouring/tureckova/nnUNet_preprocessed/ /media/bizon/data2tb/
+'''
