@@ -120,8 +120,8 @@ def analyze_dataset(task_string, override=False, collect_intensityproperties=Tru
 
 
 def plan_and_preprocess(task_string, num_threads=8, no_preprocessing=False):
-    from nnunet.experiment_planning.experiment_planner_baseline_2DUNet import ExperimentPlanner2D
-    # from nnunet.experiment_planning.experiment_planner_baseline_3DUNet import ExperimentPlanner
+    # from nnunet.experiment_planning.experiment_planner_baseline_2DUNet import ExperimentPlanner2D
+    from nnunet.experiment_planning.experiment_planner_baseline_3DUNet import ExperimentPlanner
 
     preprocessing_output_dir_this_task_train = join(preprocessing_output_dir, task_string)
     cropped_out_dir = join(cropped_output_dir, task_string)
