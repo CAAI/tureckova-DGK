@@ -19,6 +19,7 @@ setup(name='nnunet',
             "SimpleITK",
             "pandas",
       ],
+      py_modules=[],
       keywords=['deep learning', 'image segmentation', 'medical image analysis',
                 'medical image segmentation', 'nnU-Net', 'nnunet']
       )
